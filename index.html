@@ -14,16 +14,15 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <link rel="stylesheet" type="text/css" href="index.css">
         <script src="index.js?version=2.1"></script>
-
+		<title>Remnant: From the Ashes 世界資源分析器</title>
     </head>
      <body>
-        <h1>Remnant: From the Ashes World Analyzer</h1>
+        <h1>Remnant: From the Ashes 世界資源分析器</h1>
 
          <p>
-            How to use:<br>
-            Navigate to C:/Users/YOUR USER NAME/AppData/Local/Remant/Saved/SaveGames and locate the file named something like save_0.bak or save_0.sav. Upload to see what you rolled.<br><br>
-            For Adventure Mode, make sure to use the right side filters to filter by the selected world. Worlds other than what you chose should be ignored as they are just past rolls for those worlds. There is currently no way to determine which world was chosen in adventure mode so the tool lists all of them.
-             <br><br>
+            使用方法:<br>
+            於 %LocalAppData%/Remant/Saved/SaveGames 找到你的世界存檔（save_0.sav），上傳並分析出該世界有那些資源。<br><br>
+            分析冒險模式時，需要使用右側按鈕選擇正在遊玩世界。因為現時無法判斷冒險模式選擇了哪個世界，分析器會把存檔中所有資料列出，其中包含過去生成世界的資料。<br><br>
             Known Issues:<br> 
              Adventure mode seems to not be working correctly, currently working on a fix.<br>
              Ad block can mess with the tool functionality.<br>
@@ -31,41 +30,41 @@
 <br><br>
             Credits to /u/FAOAB on reddit for this <a href="https://docs.google.com/spreadsheets/d/1VzmDx0ZXQWN5N_9_zP0gEqToyuB9ZjlxgZOEGdiuA6A/edit#gid=2123178902" style='color:white;'> spreadsheet</a> that helped me sort out some of the more confusing names. 
             <br><br>
-
-             
+			本漢化由<a href="https://forum.gamer.com.tw/C.php?bsn=34991&snA=293" style='color:white;'>【密技】世界資源分析中文化</a>修改而成。
+            <br><br>
 
 
         </p>
         <input type="file" onchange="loadFile(this)">
 
         <div id="filters">
-            <button id="toggle-adv">Show Adventure Mode</button>
-            <button id="toggle-items">Only Items</button>
-            <button id="toggle-sd">Only Side Dungeons</button>
-            <button id="toggle-sieges">Only Sieges</button>
-            <button id="toggle-poi">Only Points of Interest</button>
-            <button id="toggle-mb">Only Mini Bosses</button>
-            <button id="toggle-bosses">Only Bosses</button>
-            <button class="toggle-all">Show All</button>
+            <button id="toggle-adv">顯示冒險模式</button>
+            <button id="toggle-items">只顯示掉落物品</button>
+            <button id="toggle-sd">只顯示旁支地下城</button>
+            <button id="toggle-sieges">只顯示圍城</button>
+            <button id="toggle-poi">只顯示關鍵點</button>
+            <button id="toggle-mb">只顯示小王</button>
+            <button id="toggle-bosses">只顯示世界王</button>
+            <button class="toggle-all">顯示全部</button>
         </div>
 
         <div id="filters-right">
-            <button id="toggle-earth">Only Earth</button>
-            <button id="toggle-rhom">Only Rhom</button>
-            <button id="toggle-corsus">Only Corsus</button>
-            <button id="toggle-yaesha">Only Yaesha</button>
-            <button class="toggle-all">Show All</button>
+            <button id="toggle-earth">只顯示地球</button>
+            <button id="toggle-rhom">只顯示洛姆</button>
+            <button id="toggle-corsus">只顯示克爾蘇斯</button>
+            <button id="toggle-yaesha">只顯示耶莎</button>
+            <button class="toggle-all">顯示全部</button>
         </div>
 
 
         <table class="piece-table main-mode">
             <thead>
                 <tr class="header-row">
-                    <th class="headerSort" tabindex="0" role="columnheader button">Location
+                    <th class="headerSort" tabindex="0" role="columnheader button">地點
                     </th>
-                    <th class="headerSort" tabindex="0" role="columnheader button">Event Type
+                    <th class="headerSort" tabindex="0" role="columnheader button">事件類別
                     </th>
-                     <th class="headerSort" tabindex="0" role="columnheader button">Event Name
+                     <th class="headerSort" tabindex="0" role="columnheader button">事件名稱
                     </th>
                 </tr>
             </thead>
@@ -78,11 +77,11 @@
          <table class="piece-table adventure-mode">
             <thead>
                 <tr class="header-row">
-                    <th class="headerSort" tabindex="0" role="columnheader button">Location
+                    <th class="headerSort" tabindex="0" role="columnheader button">地點
                     </th>
-                    <th class="headerSort" tabindex="0" role="columnheader button">Event Type
+                    <th class="headerSort" tabindex="0" role="columnheader button">事件類別
                     </th>
-                     <th class="headerSort" tabindex="0" role="columnheader button">Event Name
+                     <th class="headerSort" tabindex="0" role="columnheader button">事件名稱
                     </th>
                 </tr>
             </thead>
