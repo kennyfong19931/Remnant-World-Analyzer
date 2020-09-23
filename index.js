@@ -30,6 +30,9 @@ var zt = {
 	"Mothers Ring":	"<span class=\"label\">戒指</span> 母親的戒指",
 	"Ring Of Evasion":	"<span class=\"label\">戒指</span> 閃避戒指",
 	"Pillar Of Stone":	"<span class=\"label\">戒指</span> 石之抵柱",
+	"Gunsligners Ring":	"<span class=\"label\">戒指</span> 槍手戒指",
+	"Aggressors Bane":	"<span class=\"label\">戒指</span> 入侵者之災禍",
+	"Riphide Letos Armor":	"<span class=\"label\">套裝</span> 萊托套裝；先\"開啟萊托算法\"，再\"關閉萊托算法\"，此時傳送裝置會將玩家隨機傳送到該副本中的任意位置，玩家只需反覆進入裝置直到被傳送至隱藏房間，拿到萊托套裝。",
 	"Nexus":	"根蔓中樞；暫無重點要記",
 	"The Mangler":	"<span class=\"label-boss\">Boss</span> 撕裂者；<span class=\"label\">武器改裝</span>  播種者",
 	"Root Shrine":	"<span class=\"label-boss\">Boss</span> 根蔓神祠；<span class=\"label\">套裝</span> 扭曲套裝",
@@ -40,9 +43,12 @@ var zt = {
 	"Singe":	"<span class=\"label-boss\">Boss</span> 燒焦；<span class=\"label\">手槍</span> 噴火者（正常）；<span class=\"label\">近戰</span> 陰燃（斷尾）",
 	"Brabus":	"<span class=\"label-boss\">Boss</span> 布拉巴斯【盜賊】；<span class=\"label\">武器改裝</span>  爆炸射擊；<span class=\"label\">特性</span> 冷若冰霜（沒懷表殺隊友）；<span class=\"label\">套裝</span> 盜賊套裝（有懷表與頭目對話）",
 	"The Clean Room":	"<span class=\"label\">近戰</span> 荒原行者流星錘",
-	"Cleansing Jewel":	"<span class=\"label\">項鍊</span> 淨化珠寶",
+	"Cleansing Jewel":	"<span class=\"label\">項鍊</span> 淨化寶珠",
 	"Brutal Mark":	"<span class=\"label\">項鍊</span> 殘暴印記",
+	"Talisman Of Animosity":	"<span class=\"label\">項鍊</span> 敵意護符",
 	"Band Of Strength":	"<span class=\"label\">戒指</span> 力量戒指",
+	"Deceivers Band":	"<span class=\"label\">戒指</span> 欺騙者戒指",
+	"Ring Of Elusion":	"<span class=\"label\">戒指</span> 逃避戒指",
 	"Hunters Halo":	"<span class=\"label\">戒指</span> 獵人光暈",
 	"Ezlans Band":	"<span class=\"label\">戒指</span> 艾茲蘭的指環",
 	"Armor Vault":	"<span class=\"label\">套裝</span> 阿卡里套裝",
@@ -65,6 +71,15 @@ var zt = {
 	"Ixillis":	"<span class=\"label-boss\">Boss</span> 伊克希利斯十五、十六號；<span class=\"label\">手槍</span> 蟲巢炮；<span class=\"label\">近戰</span> 守護生物之斧；※ 將心藏交給不滅之王；<span class=\"label\">近戰</span> 劈裂者；※ 將心藏交給精靈女王；<span class=\"label\">長槍</span> 弩；<span class=\"label\">套裝</span> 屠殺者套裝",
 	"Canker":	"<span class=\"label-boss\">Boss</span> 潰瘍；<span class=\"label\">武器改裝</span>  腐蝕光環",
 	"Thrall":	"<span class=\"label-boss\">Boss</span> 魔奴；<span class=\"label\">武器改裝</span>  魔潮；<span class=\"label\">特性</span> 催化劑",
+	"Abandoned Throne":	"廢棄王座；擊殺100只白色甲蟲後會出現一隻藍色甲蟲，將其擊殺以獲得乳白甲殼",
+	"Graveyard Elf":	"沼澤墓園；<span class=\"label\">特性</span> 效能；在沼澤精靈的湯裡放入伊斯卡爾藥瓶的寄生蟲；<span class=\"label\">戒指</span> 不潔者戒指；離開地圖再回去小屋",
+	"Hive Wisps":	"<span class=\"label\">戒指</span> 靈魂餘燼；擊破所有藍色的蟲卵；<span class=\"label\">特性</span> 召喚；不被鬼火擊中",
+	"Fetid Pool":	"<span class=\"label\">項鍊</span> 銹蝕項鍊；戴上鏽蝕項鏈，進入靈偶之池中央的酸液池中，蹲下，一段時間後即可獲得酸蝕鑰匙；<span class=\"label\">項鏈</span> 黑暗之心；藏寶室第一層；<span class=\"label\">戒指</span> 英雄戒指；<span class=\"label\">特性</span> 加固；藏寶室第二層",
+	"Brain Bug":	"<span class=\"label\">套裝</span> 甲殼套裝；低語之廳、針刺巢穴、奇異隘口中，擊殺圓湖裡的黑甲蟲，獲得硬化甲。殼在感染寄生蟲的狀態下從馬爾戈什購買；<span class=\"label\">特性</span> 發光；在感染寄生蟲的情況下與馬爾戈什對話，交出甲殼。甲殼在廢棄王座擊殺100只白色甲蟲後會出現一隻藍色甲蟲，將其擊殺以獲得乳白甲殼",
+	"Queens Temple":	"與與女王獲得任務道具密碼晶石魔符；有出現沼澤墓園的情況下，在感染寄生蟲的情況下與女王對話，可以獲得任務道具伊斯卡爾藥瓶；<span class=\"label-boss\">Boss</span> 伊斯卡爾女皇；<span class=\"label\">手槍</span> 伊斯卡爾之驕傲；<span class=\"label\">特性</span> 步法；<span class=\"label\">武器改裝</span> 追尋者；在BOSS戰進入第二階段時讓BOSS跪下的狀態下被落石砸死獲得",
+	"Dream Eater":	"<span class=\"label\">武器改裝</span> 裂隙行者",
+	"Barb Terror":	"<span class=\"label\">武器改裝</span> 易爆鋼毛",
+	"Sketterling":	"針刺巢穴、奇異隘口、低語之廳會出現紅色甲蟲(補充資訊二)，擊敗隨機掉落樂禍項鍊、伊斯卡爾獵人指環、螳螂戒指。黑色甲蟲(補充資訊二)擊敗掉落硬化甲殼",
 	"Doe Shrine":	"※ 演奏鹿之歌獲取項練；鹿之歌：5433412321；<span class=\"label\">項鍊</span> 拾荒者飾品；※ 在任意有鐘處演奏守護生物之歌獲取特性；守護生物之歌：11341132；<span class=\"label\">特性</span> 迅捷",
 	"Vengeance Idol":	"<span class=\"label\">項鍊</span> 復仇神像",
 	"Reanimators":	"<span class=\"label\">項鍊</span> 靈魂之錨（消滅復活者）",
@@ -72,6 +87,8 @@ var zt = {
 	"Stone Of Balance":	"<span class=\"label\">戒指</span> 平衡之石",
 	"Hunters Band":	"<span class=\"label\">戒指</span> 獵人指環",
 	"Keepers Ring":	"<span class=\"label\">戒指</span> 守衛的戒指",
+	"Pearl Of Luminescence":	"<span class=\"label\">戒指</span> 螢光珍珠",
+	"Ring Of Shadows":	"<span class=\"label\">戒指</span> 暗影戒指",
 	"Celerity Stone":	"<span class=\"label\">戒指</span> 迅捷之石（固定在地宮盡頭）",
 	"The Ravager Shrine":	"<span class=\"label\">套裝</span> 長老套裝",
 	"Blink Thief":	"<span class=\"label-boss\">Boss</span> 閃爍盜賊；<span class=\"label\">長槍</span> 彈跳步槍",
@@ -109,13 +126,13 @@ var zt = {
 
 	"The Eastern Wind":	"東風",
 	"The Scouring Waste":	"沖刷荒原",
-	"The Ardent Temple":	"熱忱神廟",
+	"The Ardent Temple":	"熱誠神廟",
 	"The Purge Hall":	"清洗大廳",
 	"The Burrows":	"地洞",
 	"The Bunker":	"地堡",
 	"Concourse Of The Sun":	"太陽合流",
 	"Vault Of The Heralds":	"傳令官的地下室",
-	"The Iron Rift":	"鋼鐵裂縫",
+	"The Iron Rift":	"鋼鐵裂隙",
 	"Shackled Canyon":	"鐐銬峽谷",
 	"Loom Of The Black Sun":	"黑日隱像",
 
@@ -124,6 +141,22 @@ var zt = {
 	"The Capillary":	"毛細管",
 	"The Grotto":	"石窟",
 	"The Drowned Trench":	"淹埋溝濠",
+	"Circlet Hatchery":	"環形孵化場",
+	"Fetid Pools":	"靈偶之池",
+	"Strange Pass":	"奇異隘口",
+	"Hall Of Whispers":	"低語之廳",
+	"Needle Lair":	"針刺巢穴",
+	"Iskal Temple":	"伊斯卡爾神廟",
+	/* 
+	密碼晶石
+	與伊斯卡爾女王對話獲得任務道具迷宮晶石/密碼晶石
+	<span class=\"label\">特性</span> 集中
+	第一次點亮石碑
+	<span class=\"label\">特性</span> 血之紐帶
+	第二次點亮石碑
+	<span class=\"label\">套裝</span> 迷宮套裝
+	第三次點亮石碑
+	*/
 
 	"The Verdant Strand":	"青翠海濱",
 	"The Scalding Glade":	"燙傷林地",
