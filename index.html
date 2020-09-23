@@ -2,15 +2,6 @@
 <html>
     <head>
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146791562-1"></script>
-            <script>
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-
-              gtag('config', 'UA-146791562-1');
-           </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <link rel="stylesheet" type="text/css" href="index.css">
         <script src="index.js?version=2.1"></script>
@@ -21,7 +12,7 @@
 
          <p>
             使用方法:<br>
-            於 %LocalAppData%\Remnant\Saved\SaveGames 找到你的世界存檔（save_0.sav），上傳並分析出該世界有那些資源。<br><br>
+            於 %LocalAppData%\Remnant\Saved\SaveGames 找到你的世界存檔（save_0.sav / save_0.bak），上傳並分析出該世界有那些資源。<br><br>
             分析冒險模式時，需要使用右側按鈕選擇正在遊玩世界。因為現時無法判斷冒險模式選擇了哪個世界，分析器會把存檔中所有資料列出，其中包含過去生成世界的資料。<br><br>
             Known Issues:<br> 
              Adventure mode seems to not be working correctly, currently working on a fix.<br>
@@ -35,29 +26,56 @@
 
 
         </p>
+        <div id="drop-area">
         <input type="file" onchange="loadFile(this)">
+        <p style="text-align: center; font-size:25px;">Choose or drop file</p>
+        </div>
 
         <div id="filters">
             <button id="toggle-adv">顯示冒險模式</button>
-            <button id="toggle-items">只顯示掉落物品</button>
-            <button id="toggle-sd">只顯示旁支地下城</button>
-            <button id="toggle-sieges">只顯示圍城</button>
-            <button id="toggle-poi">只顯示關鍵點</button>
-            <button id="toggle-mb">只顯示小王</button>
-            <button id="toggle-bosses">只顯示世界王</button>
-            <button class="toggle-all">顯示全部</button>
+
+            <br />
+
+            <div id="select-filters">
+                <fieldset>
+                <legend>區域:</legend>
+
+                <label><input type="checkbox" id="f-earth" class="filter" checked>地球</label>
+                <label><input type="checkbox" id="f-rhom" class="filter" checked>洛姆</label>
+                <label><input type="checkbox" id="f-corsus" class="filter" checked>克爾蘇斯</label>
+                <label><input type="checkbox" id="f-yaesha" class="filter" checked>耶莎</label>
+                </fieldset>
+
+                <br/>
+
+                <fieldset>
+                <legend>種類:</legend>
+                <label><input type="checkbox" id="f-items" class="filter" checked>掉落物品</label>
+                <label><input type="checkbox" id="f-sidedgs" class="filter" checked>旁支地下城</label>
+                <label><input type="checkbox" id="f-sieges" class="filter" checked>圍城</label>
+                <label><input type="checkbox" id="f-poi" class="filter" checked>關鍵點</label>
+                <label><input type="checkbox" id="f-minibosses" class="filter" checked>小王</label>
+                <label><input type="checkbox" id="f-bosses" class="filter" checked>世界王</label>
+                </fieldset>
+
+                <br/>
+                
+                <fieldset>
+                <legend>名稱過濾:</legend>
+
+                <label><input type="text" id="f-name" class="filter" placeholder="輸入事件名稱過濾"></label><button class="clear-button" onclick="document.getElementById('f-name').value=''">X</button>
+                </fieldset>
+
+                <br/>
+
+                <button class="half-button" onclick="updateFilters(false)">全部隱藏</button> <button class="half-button" onclick="updateFilters(true)">全部顯示</button>
+                <br/>
+                <button id="apply">確定</button>
+            </div>
         </div>
 
-        <div id="filters-right">
-            <button id="toggle-earth">只顯示地球</button>
-            <button id="toggle-rhom">只顯示洛姆</button>
-            <button id="toggle-corsus">只顯示克爾蘇斯</button>
-            <button id="toggle-yaesha">只顯示耶莎</button>
-            <button class="toggle-all">顯示全部</button>
-        </div>
 
-
-        <table class="piece-table main-mode">
+        <table class="piece-table main-mode" style="display:none;">
             <thead>
                 <tr class="header-row">
                     <th class="headerSort" tabindex="0" role="columnheader button">地點
